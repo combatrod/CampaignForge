@@ -16,6 +16,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Campaign-specific data - excluded from Git
+/Data/
+
 # Mono auto generated files
 mono_crash.*
 
@@ -480,3 +483,17 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Local diagnostics and historical packages
+/Diagnostics/
+
+# SQL Server backups and logs
+*.bak
+*.trn
+BackupLog.txt
+
+# Local application data
+/Data/
+
+# Published output
+publish/

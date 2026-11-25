@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaign Forge</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">CF</div>
+    <div><div class="brand-name">CAMPAIGN FORGE</div>
+      <div class="brand-subtitle">DUNGEONS &amp; DRAGONS CAMPAIGN MANAGEMENT</div></div>
+    <div class="topbar-right"><span class="status-dot"></span> LOCAL SERVER</div>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div><p class="eyebrow">THE DM'S WORKSPACE</p><h1>Your campaigns.</h1>
+        <p class="intro-copy">Build worlds, shape stories, and keep every adventure organized.</p></div>
+      <div class="intro-actions"><a class="secondary-button" href="/characters.html">⚔ Character Forge</a><button class="primary-button" id="newCampaignButton">＋ New campaign</button></div>
+    </section>
+    <section class="toolbar">
+      <div class="count-block"><strong id="campaignCount">—</strong><span>CAMPAIGNS</span></div>
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="Search campaigns…" aria-label="Search campaigns">
+        <select id="statusFilter" aria-label="Filter by status">
+          <option value="">All statuses</option><option>Planning</option><option>Active</option>
+          <option>Paused</option><option>Completed</option><option>Archived</option>
+        </select>
+      </div>
+    </section>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+    <section id="campaignGrid" class="campaign-grid" aria-label="Campaigns"></section>
+    <section id="emptyState" class="empty-state" hidden>
+      <div class="empty-icon">⚔</div><h2>Your next great adventure starts here.</h2>
+      <p>Create your first campaign to begin building its world and story.</p>
+      <button class="primary-button" id="emptyCreateButton">Create a campaign</button>
+    </section>
+  </main>
+  <dialog id="campaignDialog">
+    <form id="campaignForm">
+      <div class="dialog-heading"><div><p class="eyebrow">CAMPAIGN RECORD</p><h2 id="dialogTitle">New campaign</h2></div>
+        <button type="button" class="close-button" id="closeDialog" aria-label="Close">×</button></div>
+      <input type="hidden" id="campaignId">
+      <label>Campaign name <span class="required">*</span><input id="name" maxlength="120" required placeholder="The Shattered Crown"></label>
+      <label>World or setting<input id="setting" maxlength="160" placeholder="A homebrew world, Eberron, Greyhawk…"></label>
+      <label>Description<textarea id="description" maxlength="4000" rows="4" placeholder="A short overview of the campaign premise…"></textarea></label>
+      <label>Status<select id="status"><option>Planning</option><option>Active</option><option>Paused</option><option>Completed</option><option>Archived</option></select></label>
+      <div class="dialog-actions"><button type="button" class="secondary-button" id="cancelDialog">Cancel</button>
+        <button type="submit" class="primary-button" id="saveButton">Save campaign</button></div>
+    </form>
+  </dialog>
+  <footer>CAMPAIGN FORGE <span>·</span> YOUR WORLD. YOUR STORY. YOUR RULES.</footer>
+</body>
+</html>
